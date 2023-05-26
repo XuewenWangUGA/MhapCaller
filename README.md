@@ -14,7 +14,7 @@ V0.3
 ## Usage
 for help: 
 
-java -jar MHVar0.3.jar
+java -jar MhapCaller0.3.jar
 
 ## Command example
 java -jar -Xmx120G $scriptdir/MhapCaller0.3.jar \
