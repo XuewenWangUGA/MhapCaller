@@ -52,10 +52,10 @@ Where the $xxx is a detailed value .
  
  ## Output of MhapCaller
 
-     Macrohaplotypes and supported reads count in tabular text file .tsv. 
-     E.g., the two macrohaplotypes around FBI's CODIS loci D2S441 in 8 kb PacBio HiFi reads of benchmark reference hg002. Locus details are at [FBI](https://www.fbi.gov/how-we-can-help-you/dna-fingerprint-act-of-2005-expungement-policy/codis-and-ndis-fact-sheet)
+Macrohaplotypes and supported reads count in tabular text file .tsv. 
+E.g., the two macrohaplotypes around FBI's CODIS loci D2S441 in 8 kb PacBio HiFi reads of benchmark reference hg002. Locus details are at [FBI](https://www.fbi.gov/how-we-can-help-you/dna-fingerprint-act-of-2005-expungement-policy/codis-and-ndis-fact-sheet)
      
-     The first line shows the total reads for this locus D2441. The position lines present the coordinate of each targeted variant site on chr2 in human genome Hg38. Then the macrohaplotypes, including three parts of SNPs, InDels and STRs separated by ";".
+The first line shows the total reads for this locus D2441. The position lines present the coordinate of each targeted variant site on chr2 in human genome Hg38. Then the macrohaplotypes, including three parts of SNPs, InDels and STRs separated by ";".
      
     #Total hapVar: 	D2S441	27694	
     #Markername	Counts	HapVarLen	hapVar(s)
