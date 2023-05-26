@@ -6,7 +6,7 @@ The MhapCaller is also integrated into a pipeline with Python3. The pipeline tak
 
 The whole package is also available in a Singularity container.
 
- MhapCaller runs fast. It takes ~ 2 mins for four fullrunsn of PacBio smrtcell HiFi reads on a Linux machine on Cluster with 12 threads,and maximumm allowed 120G RAM. 
+ MhapCaller runs fast. It takes ~ 2 mins for a merged data from four full runs of PacBio smrtcell HiFi reads on a Linux machine on Cluster with 12 threads,and maximumm allowed 120G RAM. 
 
 ## latest version
 V0.3
