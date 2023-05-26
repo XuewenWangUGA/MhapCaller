@@ -67,7 +67,7 @@ The first line shows the total reads for this locus D2441. The position lines pr
     D2S441	7467	152	
     G,A,A,A,G,C,T,A,T,T,C,T,A,T,C,G,C,C,T,C,A,G,G,T,G,T,A,G,A,A,C,G,C,G,C,G,G,G,T,C,C,G,C,G,A,A,A,C,C,C,T,G,A,G;T|TAC,CACATATAT|C,CA,CA,CACATATATA,CATATAT,T;TCTATCTATCTATCTATCTATCTATCTATCTATCTATCTATCTATCTATTTATCTATCTA
     
-   ## Visulization 
+   ## Visualization 
    The macrohaplotypes call be visualized or edited in a text processor, Microsoft excels, and spread sheet.
    
    The graphically view and compare the macrohaplotypes, please use our graphic tool: [USAT](https://github.com/XuewenWangUGA/USAT)
