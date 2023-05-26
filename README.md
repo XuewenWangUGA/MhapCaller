@@ -1,2 +1,73 @@
 # MhapCaller
-Macrohaplotype caller for STR, SNP and InDel from NGS long read sequencing data
+Macrohaplotype caller for STR, SNP and InDel from NGS long read sequencing data, especially for PacBio HiFi reads
+The MhapCaller calls targeted STRs/SSRs, SNPs and InDels simutanunously in a row from each single NGS read and clusters the variants into phased haplotype string. MhapCaller is the best tool to analysis all haplotypic variants from genetically inherited DNA. It suits for diploid, polyploid, and DNA mixtures from many individuals, e.g. DNA forensics. MhapCaller is programmed in Java with parallele computing enabled so it can run in any computing platforms. 
+
+The MhapCaller is also integrated into a pipeline with Python3. The pipeline takes the fastq reads as input, align reads to the genome, sort and index alignment, and then run MhapCaller. Additional tools are also available as util tools.
+
+The whole package is also available in a Singularity container.
+
+ MhapCaller runs fast. It takes ~ 2 mins for four fullrunsn of PacBio smrtcell HiFi reads on a Linux machine on Cluster with 12 threads,and maximumm allowed 120G RAM. 
+
+## latest version
+V0.3
+
+## Usage
+for help: 
+
+java -jar MHVar0.3.jar
+
+## Command example
+java -jar -Xmx120G $scriptdir/MHVar0.3.jar \
+
+-i $inbam \
+
+-o $outMH \
+
+-a $scriptdir/$strConfig \
+
+-d $scriptdir/$indelConfig  \
+
+-n $scriptdir/$snpConfig  \
+
+-r $refGenome \
+
+-h $hompolymerThreshold \
+
+-m $minMisMatchStrAnchor \
+
+-q $indelQualityThreshold \
+
+-c $minSupportReadCount \
+
+-p $minAlleleFreq \
+
+-t $threadn
+
+Where the $xxx is a detailed value .
+
+## Input of MhapCaller
+ 1. a reads-reference alignment file in BAM format
+
+ 2. Tartgeted variant position information for each of STRs, SNPs, and InDels
+ 
+ ## Output of MhapCaller
+
+     Macrohaplotypes and supported reads count in tabular text file .tsv. 
+     E.g., the two macrohaplotypes around FBI's CODIS loci D2S441 in 8 kb PacBio HiFi reads of benchmark reference hg002. Locus details are at https://www.fbi.gov/how-we-can-help-you/dna-fingerprint-act-of-2005-expungement-policy/codis-and-ndis-fact-sheet
+     
+     The first line shows the total reads for this locus D2441. The position lines present the coordinate of each targeted variant site on chr2 in human genome Hg38. Then the macrohaplotypes, including three parts of SNPs, InDels and STRs separated by ";".
+     
+    #Total hapVar: 	D2S441	27694	
+    #Markername	Counts	HapVarLen	hapVar(s)
+    #			Position:68011922,68011990,68012066,68012109,68012198,68012335,68012415,68012463,68012596,68012616,68012754,68012776,68012877,68012888,68013086,68013124,68013388,68013405,68013406,68013664,68013692,68013770,68013988,68014065,68014213,68014245,68014581,68014700,68015087,68015100,68015130,68015131,68015330,68015388,68015498,68015787,68015976,68016033,68016045,68016108,68016576,68016583,68017126,68017147,68017242,68017364,68017504,68017573,68017732,68017739,68018169,68018176,68018322,68018330,68012435,68012478,68012608,68012694,68012722,68012762,68012781,68011917
+    
+D2S441	8646	136	
+G,A,A,A,G,C,T,A,T,C,C,T,G,T,T,G,C,C,G,C,A,A,G,T,A,T,A,G,A,A,C,G,T,G,C,G,G,G,T,C,C,G,C,G,G,A,A,C,C,C,T,A,A,G;TA,CACATATATA,CA,CA,CACATATATA,CATATATA,ATGT;TCTATCTATCTATCTATCTATCTATCTATCTATCTATCTATCTA
+
+D2S441	7467	152	
+G,A,A,A,G,C,T,A,T,T,C,T,A,T,C,G,C,C,T,C,A,G,G,T,G,T,A,G,A,A,C,G,C,G,C,G,G,G,T,C,C,G,C,G,A,A,A,C,C,C,T,G,A,G;T|TAC,CACATATAT|C,CA,CA,CACATATATA,CATATAT,T;TCTATCTATCTATCTATCTATCTATCTATCTATCTATCTATCTATCTATTTATCTATCTA
+
+
+
+
+
