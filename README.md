@@ -17,7 +17,7 @@ for help:
 java -jar MHVar0.3.jar
 
 ## Command example
-java -jar -Xmx120G $scriptdir/MHVar0.3.jar \
+java -jar -Xmx120G $scriptdir/MhapCaller0.3.jar \
 
 -i $inbam \
 
