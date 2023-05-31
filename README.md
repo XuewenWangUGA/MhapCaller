@@ -65,9 +65,9 @@ usage: `java -jar -Xmx100G MHapCaller.jar [options]`
 
 
 ## Input of MhapCaller
- 1. a reads-reference alignment file in BAM format
+ 1. a read-reference alignment file in [BAM format](https://en.wikipedia.org/wiki/SAM_(file_format))
 
- 2. Tartgeted variant position information for each of STRs, SNPs, and InDels
+ 2. Configure files of tartgeted variant positional information for each of STRs, SNPs, and InDels
  
  ## Output of MhapCaller
 
