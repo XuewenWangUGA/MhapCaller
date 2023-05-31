@@ -14,7 +14,9 @@ V0.3
 ## Usage
 For help: 
 
-`java -jar MHapCaller.jar`
+`java -jar MHapCaller##.jar`
+
+where ## is the version number.
 
 ## Command
 MHapCaller v0.3
