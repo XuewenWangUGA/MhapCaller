@@ -62,7 +62,12 @@ usage: `java -jar -Xmx100G MHapCaller.jar [options]`
  
     java -jar -Xmx120G MHapCaller0.3.jar -i /mnt/data0/xuewen/macrohaplotype/hg002/Q40hifi/hg002.8kampl.Q40.fastq.gz_GRCh38.bam -o hg002.8kampl.Q40_GRCh38.tsv -a /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/CODISSTR_anchor.XW.config_v0.2.txt -d /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/MHindels_v0.2.bed -n /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/MHsnps.pos.txt -r /mnt/data0/xuewen/hg38giab/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta -l 2 -m 1 -q 15 -c 100 -p 0.01 -t 12
 
-
+## preprocess pipeline for MhapCaller
+ This pipeline will preprocess the orginal PacBio hifi reads in BAM, quality control, umi-analysis (optional), statistica summary, read-reference alignment, sort, and index. The results are read-reference alignment in BAM format and BAM index.
+ 
+ `MH_umi_dedup_map_pipe.sh`
+ 
+ 
 
 ## Input of MhapCaller
  1. a read-reference alignment file in [BAM format](https://en.wikipedia.org/wiki/SAM_(file_format))
