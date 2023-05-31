@@ -24,7 +24,7 @@ usage: **java -jar -Xmx100G MHapCaller.jar [options]**
  **-a,--strAnchorFile** <arg>  &nbsp; configure file of anchors for STRs in
                                  tabular plain text
  
-** -c,--MinReadCount ** &nbsp; integer, minimum read count to report a
+**-c,--MinReadCount** &nbsp; integer, minimum read count to report a
                                  macrohaplotype, default [2]
  
  ** -d,--inDelBedFile ** <arg> &nbsp; configure file of InDels in BED format in
