@@ -21,7 +21,7 @@ MHapCaller v0.3
 
 usage: **java -jar -Xmx100G MHapCaller.jar [options]**
 
- -a,--strAnchorFile <arg>\tconfigure file of anchors for STRs in
+ -a,--strAnchorFile <arg> emsp configure file of anchors for STRs in
                                  tabular plain text
  
  -c,--MinReadCount               integer, minimum read count to report a
