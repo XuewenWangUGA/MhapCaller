@@ -24,37 +24,37 @@ usage: **java -jar -Xmx100G MHapCaller.jar [options]**
  -a,--strAnchorFile <arg> &nbsp; configure file of anchors for STRs in
                                  tabular plain text
  
- -c,--MinReadCount               integer, minimum read count to report a
+ -c,--MinReadCount &nbsp; integer, minimum read count to report a
                                  macrohaplotype, default [2]
  
- -d,--inDelBedFile <arg>         configure file of InDels in BED format in
+ -d,--inDelBedFile <arg> &nbsp; configure file of InDels in BED format in
                                  tabular plain text
  
- -i,--input <arg>                input BAM file with a path
+ -i,--input <arg> &nbsp; input BAM file with a path
  
- -l,--homopolymerLen             integer, homopolymer length threshold to
+ -l,--homopolymerLen &nbsp; integer, homopolymer length threshold to
                                  skip call variant,default [4]
  
- -m,--MaxMismatches              integer, maximum distance of edit
+ -m,--MaxMismatches  &nbsp; integer, maximum distance of edit
                                  distance in anchor match, default [1]
  
- -n,--snpPanelPosFile <arg>      configure file of SNPs in tabular plain
+ -n,--snpPanelPosFile <arg> &nbsp; configure file of SNPs in tabular plain
                                  text
  
- -o,--output <arg>               output file name for macrohaplotype
+ -o,--output <arg> &nbsp; output file name for macrohaplotype
                                  result
  
- -p,--MinReadProportion          double, minimum read proportion of all
+ -p,--MinReadProportion &nbsp; double, minimum read proportion of all
                                  reads to report a macrohaplotype, default
                                  [0.001]
  
- -q,--LowQualThreshold           integer, phred-scale quality threshold
+ -q,--LowQualThreshold &nbsp; integer, phred-scale quality threshold
                                  for variant bases, default [15]
  
- -r,--refGenomeFastaFile <arg>   Genome reference sequence file in .fasta
+ -r,--refGenomeFastaFile <arg> &nbsp; Genome reference sequence file in .fasta
                                  format
  
- -t,--ThreadNumber               integer, the number of computing threads,
+ -t,--ThreadNumber &nbsp; integer, the number of computing threads,
                                  default [12]
 
  
