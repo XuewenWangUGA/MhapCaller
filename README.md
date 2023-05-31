@@ -14,7 +14,7 @@ V0.3
 ## Usage
 for help: 
 
-java -jar MhapCaller0.3.jar
+`java -jar MHapCaller.jar`
 
 ## Command
 MHapCaller v0.3
