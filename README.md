@@ -1,6 +1,6 @@
 # MhapCaller
 Macrohaplotype caller for STR, SNP and InDel from NGS long read sequencing data, especially for PacBio HiFi reads
-The MhapCaller calls targeted STRs/SSRs, SNPs and InDels simutanunously in a row from each single NGS read and clusters the variants into phased haplotype string. MhapCaller is the best tool to analysis all haplotypic variants from genetically inherited DNA. It suits for diploid, polyploid, and DNA mixtures from many individuals, e.g. DNA forensics. MhapCaller is programmed in Java with parallele computing enabled so it can run in any computing platforms. 
+The MhapCaller calls targeted STRs/SSRs, SNPs and InDels simutanunously in a row from each single NGS read and clusters the variants into phased haplotype string. MhapCaller is the best tool to analysis all haplotypic variants from genetically inherited DNA. It suits for diploid, polyploid, and complex DNA mixtures from many individuals, e.g. DNA forensics. MhapCaller is programmed in Java with parallele computing enabled so it can run in any computing platforms. 
 
 The MhapCaller is also integrated into a pipeline with Python3. The pipeline takes the fastq reads as input, align reads to the genome, sort and index alignment, and then run MhapCaller. Additional tools are also available as util tools.
 
