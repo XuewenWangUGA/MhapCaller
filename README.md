@@ -19,7 +19,7 @@ for help:
 ## Command
 MHapCaller v0.3
 
-usage: java -jar -Xmx100G MHapCaller.jar [options]
+usage: **java -jar -Xmx100G MHapCaller.jar [options]**
 
  -a,--strAnchorFile <arg>        configure file of anchors for STRs in
                                  tabular plain text
