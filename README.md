@@ -16,32 +16,39 @@ for help:
 
 java -jar MhapCaller0.3.jar
 
-## Command example
-java -jar -Xmx120G $scriptdir/MhapCaller0.3.jar \
+## Command
 
--i $inbam \
+MHapCaller v0.3
+usage: java -jar -Xmx100G MHapCaller.jar [options]
+ -a,--strAnchorFile <arg>        configure file of anchors for STRs in
+                                 tabular plain text
+ -c,--MinReadCount               integer, minimum read count to report a
+                                 macrohaplotype, default [2]
+ -d,--inDelBedFile <arg>         configure file of InDels in BED format in
+                                 tabular plain text
+ -i,--input <arg>                input BAM file with a path
+ -l,--homopolymerLen             integer, homopolymer length threshold to
+                                 skip call variant,default [4]
+ -m,--MaxMismatches              integer, maximum distance of edit
+                                 distance in anchor match, default [1]
+ -n,--snpPanelPosFile <arg>      configure file of SNPs in tabular plain
+                                 text
+ -o,--output <arg>               output file name for macrohaplotype
+                                 result
+ -p,--MinReadProportion          double, minimum read proportion of all
+                                 reads to report a macrohaplotype, default
+                                 [0.001]
+ -q,--LowQualThreshold           integer, phred-scale quality threshold
+                                 for variant bases, default [15]
+ -r,--refGenomeFastaFile <arg>   Genome reference sequence file in .fasta
+                                 format
+ -t,--ThreadNumber               integer, the number of computing threads,
+                                 default [12]
 
--o $outMH \
+ ## Example 
+ 
+    java -jar -Xmx120G -jar -Xmx200G /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/MHapCaller0.3.jar -i /mnt/data0/xuewen/macrohaplotype/hg002/Q40hifi/hg002.8kampl.Q40.fastq.gz_GRCh38.bam -o hg002.8kampl.Q40_GRCh38.tsv -a /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/CODISSTR_anchor.XW.config_v0.2.txt -d /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/MHindels_v0.2.bed -n /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/MHsnps.pos.txt -r /mnt/data0/xuewen/hg38giab/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta -l 2 -m 1 -q 15 -c 100 -p 0.01 -t 12
 
--a $scriptdir/$strConfig \
-
--d $scriptdir/$indelConfig  \
-
--n $scriptdir/$snpConfig  \
-
--r $refGenome \
-
--h $hompolymerThreshold \
-
--m $minMisMatchStrAnchor \
-
--q $indelQualityThreshold \
-
--c $minSupportReadCount \
-
--p $minAlleleFreq \
-
--t $threadn
 
 Where the $xxx is a detailed value .
 
