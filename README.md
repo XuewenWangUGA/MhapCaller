@@ -1,12 +1,12 @@
-# MhapCaller
+# MachapCaller
 Macrohaplotype caller for STR, SNP and InDel from NGS long read sequencing data, especially for PacBio HiFi reads
-The MhapCaller calls targeted STRs/SSRs, SNPs and InDels simutanunously in a row from each single NGS read and clusters the variants into phased haplotype string. MhapCaller is the best tool to analysis all haplotypic variants from genetically inherited DNA. It suits for diploid, polyploid, and complex DNA mixtures from many individuals, e.g. DNA forensics. MhapCaller is programmed in Java with parallele computing enabled so it can run in any computing platforms. 
+The MacHapCaller calls targeted STRs/SSRs, SNPs and InDels simutanunously in a row from each single NGS read and clusters the variants into phased haplotype string. MachapCaller is the best tool to analysis all haplotypic variants from genetically inherited DNA. It suits for diploid, polyploid, and complex DNA mixtures from many individuals, e.g. DNA forensics. MachapCaller is programmed in Java with parallele computing enabled so it can run in any computing platforms. 
 
-The MhapCaller is also integrated into a pipeline with Python3. The pipeline takes the fastq reads as input, align reads to the genome, sort and index alignment, and then run MhapCaller. Additional tools are also available as util tools.
+The MachapCaller is also integrated into a pipeline with Python3. The pipeline takes the fastq reads as input, align reads to the genome, sort and index alignment, and then run MachapCaller. Additional tools are also available as util tools.
 
 The whole package is also available in a Singularity container.
 
- MhapCaller runs fast. It takes ~ 2 mins for a merged data from four full runs of PacBio smrtcell HiFi reads on a Linux machine on Cluster with 12 threads,and maximumm allowed 120G RAM. 
+ MhapCaller runs fast. It takes ~ 2 mins for merged data from four full runs of PacBio smart celll HiFi reads on a Linux machine on Cluster with 12 threads, and maximumm allowed 120G RAM. 
 
 ## Latest version
 V0.3
@@ -14,14 +14,14 @@ V0.3
 ## Usage
 For help: 
 
-`java -jar MhapCaller##.jar`
+`java -jar MacHapCaller##.jar`
 
 where ## is the version number.
 
 ## Command
-MHapCaller v0.3
+MacHapCaller v0.3
 
-usage: `java -jar -Xmx100G MhapCaller.jar [options]`
+usage: `java -jar -Xmx100G MacHapCaller.jar [options]`
 
  **-a,--strAnchorFile** <arg>  &nbsp; configure file of anchors for STRs in
                                  tabular plain text
@@ -62,21 +62,21 @@ usage: `java -jar -Xmx100G MhapCaller.jar [options]`
  
  ## Example 
  
-    java -jar -Xmx120G MhapCaller0.3.jar -i /mnt/data0/xuewen/macrohaplotype/hg002/Q40hifi/hg002.8kampl.Q40.fastq.gz_GRCh38.bam -o hg002.8kampl.Q40_GRCh38.tsv -a /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/CODISSTR_anchor.XW.config_v0.2.txt -d /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/MHindels_v0.2.bed -n /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/MHsnps.pos.txt -r /mnt/data0/xuewen/hg38giab/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta -l 2 -m 1 -q 15 -c 100 -p 0.01 -t 12
+    java -jar -Xmx120G MacHapCaller0.3.jar -i /mnt/data0/xuewen/macrohaplotype/hg002/Q40hifi/hg002.8kampl.Q40.fastq.gz_GRCh38.bam -o hg002.8kampl.Q40_GRCh38.tsv -a /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/CODISSTR_anchor.XW.config_v0.2.txt -d /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/MHindels_v0.2.bed -n /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/MHsnps.pos.txt -r /mnt/data0/xuewen/hg38giab/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta -l 2 -m 1 -q 15 -c 100 -p 0.01 -t 12
 
-## Preprocess pipeline for MhapCaller
+## Preprocess pipeline for MacHapCaller
  This pipeline will preprocess the orginal PacBio hifi reads in BAM, quality control, umi-analysis (optional), statistica summary, read-reference alignment, sort, and index. The major results are a read-reference alignment in the BAM format and BAM index, as well as statistical report files.
  
  `MH_umi_dedup_map_pipe.sh`
  
  
 
-## Input of MhapCaller
+## Input of MacHapCaller
  1. a read-reference alignment file in [BAM format](https://en.wikipedia.org/wiki/SAM_(file_format))
 
  2. Configure files of tartgeted variant positional information for each of STRs, SNPs, and InDels
  
- ## Output of MhapCaller
+ ## Output of MacHapCaller
 
 Macrohaplotypes and supported reads count in tabular text file .tsv. 
 E.g., the two macrohaplotypes around FBI's CODIS loci D2S441 in 8 kb PacBio HiFi reads of benchmark reference hg002. Locus details are at [FBI](https://www.fbi.gov/how-we-can-help-you/dna-fingerprint-act-of-2005-expungement-policy/codis-and-ndis-fact-sheet)
