@@ -1,4 +1,11 @@
 # MacroHapCaller
+
+* __phased multiple alleles calling for long sequencing reads, e.g. PacBio HiFi
+
+*  __call variants of STR/SSR, SNP, InDel at the same time
+
+* __run faster with parallel computing
+
 Macrohaplotype caller for STR, SNP and InDel from NGS long read sequencing data, especially for PacBio HiFi reads
 The MacroHapCaller calls targeted STRs/SSRs, SNPs and InDels sites simutanunously in a row from each single NGS read and clusters the variants into phased haplotype strings. MacroHapCaller is the best tool to analysis all haplotypic variants from genetically inherited DNA. It suits for diploid, polyploid, and complex DNA mixtures from many individuals, e.g. DNA forensics. MacroHapCaller is programmed in Java with parallele computing enabled so it can run in any computing platforms. 
 
