@@ -1,12 +1,11 @@
-# MachapCaller
+# MacroHapCaller
 Macrohaplotype caller for STR, SNP and InDel from NGS long read sequencing data, especially for PacBio HiFi reads
-The MacHapCaller calls targeted STRs/SSRs, SNPs and InDels simutanunously in a row from each single NGS read and clusters the variants into phased haplotype string. MachapCaller is the best tool to analysis all haplotypic variants from genetically inherited DNA. It suits for diploid, polyploid, and complex DNA mixtures from many individuals, e.g. DNA forensics. MachapCaller is programmed in Java with parallele computing enabled so it can run in any computing platforms. 
+The MacroHapCaller calls targeted STRs/SSRs, SNPs and InDels sites simutanunously in a row from each single NGS read and clusters the variants into phased haplotype strings. MacroHapCaller is the best tool to analysis all haplotypic variants from genetically inherited DNA. It suits for diploid, polyploid, and complex DNA mixtures from many individuals, e.g. DNA forensics. MacroHapCaller is programmed in Java with parallele computing enabled so it can run in any computing platforms. 
 
-The MachapCaller is also integrated into a pipeline with Python3. The pipeline takes the fastq reads as input, align reads to the genome, sort and index alignment, and then run MachapCaller. Additional tools are also available as util tools.
+The MacroHapCaller is also integrated into a pipeline with Python3. The pipeline takes the fastq reads as input, align reads to the genome, sort and index alignment, and then run MachapCaller. Additional tools are also available as util tools.
 
-The whole package is also available in a Singularity container.
 
- MhapCaller runs fast. It takes ~ 2 mins for merged data from four full runs of PacBio smart celll HiFi reads on a Linux machine on Cluster with 12 threads, and maximumm allowed 120G RAM. 
+MacroHapCaller runs fast. It takes ~ 2 mins for merged data from four full runs of PacBio smart celll HiFi reads on a Linux machine on Cluster with 12 threads, and maximumm allowed 120G RAM. 
 
 ## Latest version
 V0.3
@@ -14,14 +13,13 @@ V0.3
 ## Usage
 For help: 
 
-`java -jar MacHapCaller##.jar`
+`java -jar MacroHapCaller##.jar`
 
 where ## is the version number.
 
 ## Command
-MacHapCaller v0.3
 
-usage: `java -jar -Xmx100G MacHapCaller.jar [options]`
+usage: `java -jar -Xmx100G MacroHapCaller.jar [options]`
 
  **-a,--strAnchorFile** <arg>  &nbsp; configure file of anchors for STRs in
                                  tabular plain text
@@ -62,9 +60,9 @@ usage: `java -jar -Xmx100G MacHapCaller.jar [options]`
  
  ## Example 
  
-    java -jar -Xmx120G MacHapCaller0.3.jar -i /mnt/data0/xuewen/macrohaplotype/hg002/Q40hifi/hg002.8kampl.Q40.fastq.gz_GRCh38.bam -o hg002.8kampl.Q40_GRCh38.tsv -a /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/CODISSTR_anchor.XW.config_v0.2.txt -d /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/MHindels_v0.2.bed -n /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/MHsnps.pos.txt -r /mnt/data0/xuewen/hg38giab/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta -l 2 -m 1 -q 15 -c 100 -p 0.01 -t 12
+    java -jar -Xmx120G MacroHapCaller0.3.jar -i /mnt/data0/xuewen/macrohaplotype/hg002/Q40hifi/hg002.8kampl.Q40.fastq.gz_GRCh38.bam -o hg002.8kampl.Q40_GRCh38.tsv -a /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/CODISSTR_anchor.XW.config_v0.2.txt -d /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/MHindels_v0.2.bed -n /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/MHsnps.pos.txt -r /mnt/data0/xuewen/hg38giab/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta -l 2 -m 1 -q 15 -c 100 -p 0.01 -t 12
 
-## Preprocess pipeline for MacHapCaller
+## Preprocess pipeline for MacroHapCaller
  This pipeline will preprocess the orginal PacBio hifi reads in BAM, quality control, umi-analysis (optional), statistica summary, read-reference alignment, sort, and index. The major results are a read-reference alignment in the BAM format and BAM index, as well as statistical report files.
  
  `MH_umi_dedup_map_pipe.sh`
