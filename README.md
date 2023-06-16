@@ -103,6 +103,10 @@ The first line shows the total reads for this locus D2441. The position lines pr
    
    The graphically view and compare the macrohaplotypes, please use our graphic tool: [USAT](https://github.com/XuewenWangUGA/USAT)
    
+  ## Fund
+  
+  This work was supported in part by award 15PNIJ-21-GG-04159-RESS, awarded by the National Institute of Justice, Office of Justice Programs, U.S. Department of Justice.
+  
    ## Citation
    coming soon
 
