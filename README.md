@@ -22,11 +22,11 @@ For help:
 
 `java -jar MacroHapCaller##.jar`
 
-where ## is the version number.
+where ## is the version number, e.g.: 0.3.
 
 ## Command
 
-usage: `java -jar -Xmx100G MacroHapCaller.jar [options]`
+usage: `java -jar -Xmx100G MacroHapCaller0.3.jar [options]`
 
  **-a,--strAnchorFile** <arg>  &nbsp; configure file of anchors for STRs in
                                  tabular plain text
