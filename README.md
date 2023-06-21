@@ -6,13 +6,13 @@
 
 * __run faster with parallel computing__
 
-Macrohaplotype caller for STR, SNP and InDel from NGS long read sequencing data, especially for PacBio HiFi reads
-The MacroHapCaller calls targeted STRs/SSRs, SNPs and InDels sites simutanunously in a row from each single NGS read and clusters the variants into phased haplotype strings. MacroHapCaller is the best tool to analysis all haplotypic variants from genetically inherited DNA. It suits for diploid, polyploid, and complex DNA mixtures from many individuals, e.g. DNA forensics. MacroHapCaller is programmed in Java with parallele computing enabled so it can run in any computing platforms. 
+Macrohaplotype caller for STR, SNP, and InDel from NGS long-read sequencing data, especially for PacBio HiFi reads
+The MacroHapCaller calls targeted STRs/SSRs, SNPs, and InDels sites simultaneously in a row from each single NGS read and clusters the variants into phased haplotype strings. MacroHapCaller is the best tool to analyze all haplotypic variants from genetically inherited DNA. It suits diploid, polyploid, and complex DNA mixtures from many individuals, e.g. DNA forensics. MacroHapCaller is programmed in Java with parallel computing enabled so it can run on any computing platform. 
 
-The MacroHapCaller is also integrated into a pipeline with Python3. The pipeline takes the fastq reads as input, align reads to the genome, sort and index alignment, and then run MachapCaller. Additional tools are also available as util tools.
+The MacroHapCaller is also integrated into a pipeline with Python3. The pipeline takes the fastq reads as input, align reads to the genome, sort, and index alignment, and then run MachapCaller. Additional tools are also available as util tools.
 
 
-MacroHapCaller runs fast. It takes ~ 2 mins for merged data from four full runs of PacBio smart celll HiFi reads on a Linux machine on Cluster with 12 threads, and maximumm allowed 120G RAM. 
+MacroHapCaller runs fast. It takes ~ 2 mins for merged data from four full runs of PacBio smart celll HiFi reads on a Linux machine on Cluster with 12 threads, and maximum allowed 120G RAM. 
 
 ## Latest version
 V0.3
@@ -70,7 +70,7 @@ usage: `java -jar -Xmx100G MacroHapCaller0.3.jar [options]`
     java -jar -Xmx120G MacroHapCaller0.3.jar -i /mnt/data0/xuewen/macrohaplotype/hg002/Q40hifi/hg002.8kampl.Q40.fastq.gz_GRCh38.bam -o hg002.8kampl.Q40_GRCh38.tsv -a /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/CODISSTR_anchor.XW.config_v0.2.txt -d /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/MHindels_v0.2.bed -n /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/MHsnps.pos.txt -r /mnt/data0/xuewen/hg38giab/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta -l 2 -m 1 -q 15 -c 100 -p 0.01 -t 12
 
 ## Preprocess pipeline for MacroHapCaller
- This pipeline will preprocess theoriginall PacBio HiFi reads in BAM, quality control, umi-analysis (optional), statistical summary, read-reference alignment, sort, and index. The major results are a read-reference alignment in the BAM format and BAM index, as well as statistical report files.
+ This pipeline will preprocessthe originall PacBio HiFi reads in BAM, quality control, umi-analysis (optional), statistical summary, read-reference alignment, sort, and index. The major results are a read-reference alignment in the BAM format and BAM index, as well as statistical report files.
  
  `MH_umi_dedup_map_pipe.sh`
  
