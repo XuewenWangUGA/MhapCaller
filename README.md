@@ -70,23 +70,23 @@ usage: `java -jar -Xmx100G MacroHapCaller0.3.jar [options]`
     java -jar -Xmx120G MacroHapCaller0.3.jar -i /mnt/data0/xuewen/macrohaplotype/hg002/Q40hifi/hg002.8kampl.Q40.fastq.gz_GRCh38.bam -o hg002.8kampl.Q40_GRCh38.tsv -a /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/CODISSTR_anchor.XW.config_v0.2.txt -d /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/MHindels_v0.2.bed -n /mnt/data0/xuewen/macrohaplotype/scripts/MHvar_v0.3/MHsnps.pos.txt -r /mnt/data0/xuewen/hg38giab/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta -l 2 -m 1 -q 15 -c 100 -p 0.01 -t 12
 
 ## Preprocess pipeline for MacroHapCaller
- This pipeline will preprocess the orginal PacBio hifi reads in BAM, quality control, umi-analysis (optional), statistica summary, read-reference alignment, sort, and index. The major results are a read-reference alignment in the BAM format and BAM index, as well as statistical report files.
+ This pipeline will preprocess theoriginall PacBio HiFi reads in BAM, quality control, umi-analysis (optional), statistical summary, read-reference alignment, sort, and index. The major results are a read-reference alignment in the BAM format and BAM index, as well as statistical report files.
  
  `MH_umi_dedup_map_pipe.sh`
  
  
 
-## Input of MacHapCaller
- 1. a read-reference alignment file in [BAM format](https://en.wikipedia.org/wiki/SAM_(file_format))
+## Input of MacroHapCaller
+ 1. a read-reference alignment file in [BAM format](https://en.wikipedia.org/wiki/SAM_(file_format)). This alignment file could be generated from  `MH_umi_dedup_map_pipe.sh` or other user-generated alignment file in .Bam format
 
- 2. Configure files of tartgeted variant positional information for each of STRs, SNPs, and InDels
+ 2. Configure files of targeted variant positional information for each of STRs, SNPs, and InDels
  
- ## Output of MacHapCaller
+ ## Output of MacroHapCaller
 
-Macrohaplotypes and supported reads count in tabular text file .tsv. 
+Macrohaplotypes and supported read count in tabular text file .tsv. 
 E.g., the two macrohaplotypes around FBI's CODIS loci D2S441 in 8 kb PacBio HiFi reads of benchmark reference hg002. Locus details are at [FBI](https://www.fbi.gov/how-we-can-help-you/dna-fingerprint-act-of-2005-expungement-policy/codis-and-ndis-fact-sheet)
      
-The first line shows the total reads for this locus D2441. The position lines present the coordinate of each targeted variant site on chr2 in human genome Hg38. Then the macrohaplotypes, including three parts of SNPs, InDels and STRs separated by ";".
+The first line shows the total reads for this locus D2441. The position lines present the coordinate of each targeted variant site on chr2 in the human genome Hg38. Then the macrohaplotypes, including three parts of SNPs, InDels and STRs separated by ";".
      
     #Total hapVar: 	D2S441	27694	
     #Markername	Counts	HapVarLen	hapVar(s)
