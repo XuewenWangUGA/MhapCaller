@@ -44,7 +44,7 @@ fi
 #$ samtools fastq $b -@ $threadn > ${b/bam/fastq}
 #$ gzip ${b/bam/fastq} ## output: ${b/bam/fastq.gz}
 #$ samtools stats $b >${b}.stat.txt 
-#$ python3 $scriptdir/Fastq_stat.py -i ${b/bam/fastq.gz} >${b/bam/fastq}.stat.xls
+ python3 $scriptdir/Fastq_stat.py -i ${b/bam/fastq.gz} >${b/bam/fastq}.stat.xls
 #$ echo fastq file: ${b/bam/fastq.gz}
 
 
