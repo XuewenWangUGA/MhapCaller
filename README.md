@@ -83,7 +83,7 @@ usage: `java -jar -Xmx100G MacroHapCaller0.3.jar [options]`
 
 ## Configure file format for STR
 The configure file listed the STR loci information in a tabular separated text file. An example file for forensic CODIS STR of human genome is given in "CODISSTR_anchor.XW.config_v0.2.txt"
-Each line for one STR locus. There is one fixed headline before starting detailed STR locus. Every line has 11 columns. The integer value for the last column is the estimated maximum length of TR, where 500 is enough for most cases.
+Each line for one STR locus. There is one fixed headline before starting the detailed STR locus. Every line has 11 columns. The integer value for the last column is the estimated maximum length of TR, where 500 is enough for most cases. The coordinate starts from 1.
 
     Chrom	ChromStartPos_Str	ChromEndPos_Str	Name	Repeat_unit_length	Motif_must_present	Inner_offset	Anchor_left	Anchor_right	LeftAnchorStartPos	RightAnchorEndPos	MaxRefLength
     chr1	230765214	230765259	D1S1656@STR_118267	2	CACACA	0	CAGAAAATGAGAACACATG	GGTTATGCCAAAAGGGC	230765190	230765281	500
@@ -93,7 +93,15 @@ Each line for one STR locus. There is one fixed headline before starting detaile
     
 
 ## Configure file format for InDel
+The config file for InDel is in a BED format tabular separated plain text file, which coordinates start from 0. The REF and ALT are the bases for InDel in the reference genome and variant. An example file is given for 8-kb fragments containing human CODIS STR. For Details, please read our paper. There is one fixed headline and 5 columns in each line. Then each subsequent line is for one InDel site. If multiple InDel for the same coordinate, list one of them is enough. 
 
+    Chrom	ChromStart	ChromEnd	REF	ALT
+    chr1	230764747	230764748	GA	G
+    chr1	230764749	230764750	T	TC
+    chr2	1485704	1485705	C	CT
+    chr2	1486795	1486803	TAGTGGGG	T
+    chr2	1487522	1487526	CAGG	C
+    chr2	1489924	1489975	GCACACAGGAGGAGTCACGACAGAGCAGTGTAAGAGCCGCCACGTGGGTCC	G
 
 ## Configure file format for SNP
  
