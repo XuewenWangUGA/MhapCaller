@@ -77,13 +77,13 @@ usage: `java -jar -Xmx100G MacroHapCaller0.3.jar [options]`
  
 
 ## Input of MacroHapCaller
- 1. a read-reference alignment file in [BAM format](https://en.wikipedia.org/wiki/SAM_(file_format)). This alignment file could be generated from  `MH_umi_dedup_map_pipe.sh` or other user-generated alignment file in .Bam format
+ 1. a read-reference alignment file in [BAM format](https://en.wikipedia.org/wiki/SAM_(file_format)). This alignment file could be generated from  `MH_umi_dedup_map_pipe.sh` or user-generated alignment file in .Bam format
 
  2. Configure files of targeted variant positional information for each of STRs, SNPs, and InDels
 
 ## Configure file format for STR
-The configure file listed the STR loci information in a tabular separated text file. An example file for forensic CODIS STR of human is given in "CODISSTR_anchor.XW.config_v0.2.txt"
-Each line for one STR locus
+The configure file listed the STR loci information in a tabular separated text file. An example file for forensic CODIS STR of human genome is given in "CODISSTR_anchor.XW.config_v0.2.txt"
+Each line for one STR locus. There is one fixed headline before starting detailed STR locus. Every line has 11 columns. The integer value for the last column is the estimated maximum length of TR, where 500 is enough for most cases.
 
     Chrom	ChromStartPos_Str	ChromEndPos_Str	Name	Repeat_unit_length	Motif_must_present	Inner_offset	Anchor_left	Anchor_right	LeftAnchorStartPos	RightAnchorEndPos	MaxRefLength
     chr1	230765214	230765259	D1S1656@STR_118267	2	CACACA	0	CAGAAAATGAGAACACATG	GGTTATGCCAAAAGGGC	230765190	230765281	500
@@ -93,6 +93,7 @@ Each line for one STR locus
     
 
 ## Configure file format for InDel
+
 
 ## Configure file format for SNP
  
