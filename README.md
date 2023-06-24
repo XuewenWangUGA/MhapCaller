@@ -104,6 +104,13 @@ The config file for InDel is in a BED format tabular separated plain text file, 
     chr2	1489924	1489975	GCACACAGGAGGAGTCACGACAGAGCAGTGTAAGAGCCGCCACGTGGGTCC	G
 
 ## Configure file format for SNP
+The config file for SNP is in a tabular separated plain text file, which coordinates start from 1.  There is one fixed headline and 5 columns in each line. Then each subsequent line is for one SNP site. An example file is given for 8-kb fragments containing 20 human CODIS STRs.
+
+    #CHROM	 POS 	ID	REF	ALT
+    chr1	230765010	D1S1656	A	G
+    chr1	230765280	D1S1656	G	A
+    chr1	230765336	D1S1656	C	T
+    chr1	230765352	D1S1656	G	C
  
  ## Output of MacroHapCaller
 
