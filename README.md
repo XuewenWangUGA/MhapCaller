@@ -82,7 +82,10 @@ usage: `java -jar -Xmx100G MacroHapCaller0.3.jar [options]`
  2. Configure files of targeted variant positional information for each of STRs, SNPs, and InDels
 
 ## Configure file format for STR
-The configure file listed the STR loci information in a tabular separated text file. An example file for forensic CODIS STR of human is given in ""
+The configure file listed the STR loci information in a tabular separated text file. An example file for forensic CODIS STR of human is given in "CODISSTR_anchor.XW.config_v0.2.txt"
+Each line for one STR locus
+
+    
 
 ## Configure file format for InDel
 
