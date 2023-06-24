@@ -80,6 +80,13 @@ usage: `java -jar -Xmx100G MacroHapCaller0.3.jar [options]`
  1. a read-reference alignment file in [BAM format](https://en.wikipedia.org/wiki/SAM_(file_format)). This alignment file could be generated from  `MH_umi_dedup_map_pipe.sh` or other user-generated alignment file in .Bam format
 
  2. Configure files of targeted variant positional information for each of STRs, SNPs, and InDels
+
+## Configure file format for STR
+The configure file listed the STR loci information in a tabular separated text file. An example file for forensic CODIS STR of human is given in ""
+
+## Configure file format for InDel
+
+## Configure file format for SNP
  
  ## Output of MacroHapCaller
 
