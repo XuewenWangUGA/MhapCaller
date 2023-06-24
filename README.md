@@ -85,6 +85,11 @@ usage: `java -jar -Xmx100G MacroHapCaller0.3.jar [options]`
 The configure file listed the STR loci information in a tabular separated text file. An example file for forensic CODIS STR of human is given in "CODISSTR_anchor.XW.config_v0.2.txt"
 Each line for one STR locus
 
+    Chrom	ChromStartPos_Str	ChromEndPos_Str	Name	Repeat_unit_length	Motif_must_present	Inner_offset	Anchor_left	Anchor_right	LeftAnchorStartPos	RightAnchorEndPos	MaxRefLength
+chr1	230765214	230765259	D1S1656@STR_118267	2	CACACA	0	CAGAAAATGAGAACACATG	GGTTATGCCAAAAGGGC	230765190	230765281	500
+chr1	230769616	230769683	D1S1656	4	TCTATCTATCTA	0	TCAGAGAAATAGAATCACTA	TGAGCAACACAGGCTTGAAC	230769556	230769721	500
+chr2	1489653	1489684	TPOX	4	AATGAATG	0	CAGAACAGGCACTTAGGGAA	AACGCTGACAAGGACAGAAG	1489624	1489716	500
+
     
 
 ## Configure file format for InDel
